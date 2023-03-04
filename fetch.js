@@ -2,7 +2,8 @@ const axios = require('axios')
 
 async function fetch({
   uri,
-  auth
+  auth,
+  headers
 }) {
 
   let allRoutes
@@ -12,7 +13,8 @@ async function fetch({
     let options = {
       method: `get`,
       url: uri,
-      auth: auth
+      auth: auth,
+      headers: headers,
     }
     allRoutes = await axios(options)
   } catch (e) {
